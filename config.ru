@@ -7,6 +7,24 @@ map '/unhealth' do
   run unhealth
 end
 
+map '/mario' do
+  welcome = proc do |env|
+    [200, { "Content-Type" => "text/html" }, [<<WELCOME_CONTENTS
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Welcome Mario to OpenShift</title>
+  </head>
+  <body>Hallo Mario</body>
+  </html>
+WELCOME_CONTENTS
+    ]]
+  end
+  run welcome
+end
+
 map '/health' do
   health = proc do |env|
     [200, { "Content-Type" => "text/html" }, ["1"]]
