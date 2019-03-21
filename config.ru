@@ -1,5 +1,12 @@
 require 'rack/lobster'
 
+map '/unhealth' do
+  unhealth = proc do |env|
+    [400,{ "Content-Type" => "text/html" }, ["0"] ]
+  end
+  run unhealth
+end
+
 map '/health' do
   health = proc do |env|
     [200, { "Content-Type" => "text/html" }, ["1"]]
