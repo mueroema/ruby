@@ -17,7 +17,7 @@ map '/mario' do
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>Welcome Mario to OpenShift</title>
   </head>
-  <body>Hallo Mario</body>
+  <body>Hallo Mario, from dev Tool</body>
   </html>
 WELCOME_CONTENTS
     ]]
